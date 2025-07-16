@@ -10,13 +10,13 @@ A modern, AI-powered resume analysis system that helps match candidates with job
 
 <div align="center">
 
-### Login Page
+### Dashboard
 ![Login Page](Screenshots/upload.png)
 
-### Resume Analysis Dashboard
+### Register Page
 ![Dashboard](Screenshots/register.png)
 
-### Analysis Results
+### Analysis Result Page
 ![Results](Screenshots/result.png)
 
 ### History View
