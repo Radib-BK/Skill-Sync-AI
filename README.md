@@ -2,8 +2,6 @@
 
 <div align="center">
 
-![SkillSync AI Logo](ResumeAnalyzer/ResumeAnalyzer.Client/wwwroot/skillsync_icon.png)
-
 A modern, AI-powered resume analysis system that helps match candidates with job requirements using advanced NLP and domain-specific scoring.
 
 </div>
@@ -13,13 +11,13 @@ A modern, AI-powered resume analysis system that helps match candidates with job
 <div align="center">
 
 ### Login Page
-![Login Page](Screenshots/login.png)
+![Login Page](Screenshots/upload.png)
 
 ### Resume Analysis Dashboard
-![Dashboard](Screenshots/dashboard.png)
+![Dashboard](Screenshots/register.png)
 
 ### Analysis Results
-![Results](Screenshots/results.png)
+![Results](Screenshots/result.png)
 
 ### History View
 ![History](Screenshots/history.png)
