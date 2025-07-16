@@ -131,11 +131,6 @@ graph TD
    uvicorn main:app --host 0.0.0.0 --port 5002
    ```
 
-5. **Access the Application**
-   - Web UI: `http://localhost:5000`
-   - API Swagger: `http://localhost:5001/swagger`
-   - AI Service: `http://localhost:5002/health`
-
 ## 🔒 Security Features
 
 - JWT-based authentication
@@ -164,6 +159,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Radib BK
 
 </div> 
