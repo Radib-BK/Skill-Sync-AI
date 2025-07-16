@@ -1,0 +1,11 @@
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\bin\Debug\net8.0\ResumeAnalyzer.Shared.deps.json
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\bin\Debug\net8.0\ResumeAnalyzer.Shared.dll
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\bin\Debug\net8.0\ResumeAnalyzer.Shared.pdb
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Debug\net8.0\ResumeAnalyzer.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Debug\net8.0\ResumeAnalyzer.Shared.AssemblyInfoInputs.cache
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Debug\net8.0\ResumeAnalyzer.Shared.AssemblyInfo.cs
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Debug\net8.0\ResumeAnalyzer.Shared.csproj.CoreCompileInputs.cache
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Debug\net8.0\ResumeAnalyzer.Shared.dll
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Debug\net8.0\refint\ResumeAnalyzer.Shared.dll
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Debug\net8.0\ResumeAnalyzer.Shared.pdb
+D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Debug\net8.0\ref\ResumeAnalyzer.Shared.dll

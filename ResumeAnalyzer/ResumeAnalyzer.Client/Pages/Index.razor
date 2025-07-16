@@ -1,0 +1,170 @@
+@page "/"
+@using Microsoft.AspNetCore.Components.Forms
+@using ResumeAnalyzer.Client.Services
+@using ResumeAnalyzer.Shared.Models
+@inject IResumeAnalysisService AnalysisService
+@inject IAuthService AuthService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Upload - Skill-Sync AI</PageTitle>
+
+<div class="ai-background">
+    <!-- Animated background elements -->
+    <div class="ai-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Neural network animation -->
+    <div class="neural-network">
+        <div class="node node-1"></div>
+        <div class="node node-2"></div>
+        <div class="node node-3"></div>
+        <div class="node node-4"></div>
+        <div class="connection connection-1"></div>
+        <div class="connection connection-2"></div>
+        <div class="connection connection-3"></div>
+    </div>
+</div>
+
+<div class="upload-container">
+    <div class="upload-content">
+        <div class="upload-header">
+            <h1 class="ai-title">
+                <span class="title-icon">🤖</span>
+                AI-Powered Resume Analysis
+            </h1>
+            <p class="ai-subtitle">Upload your resume and job description to get intelligent matching insights</p>
+        </div>
+
+        <div class="upload-grid">
+            <div class="upload-card neon-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="card-icon">📄</div>
+                    <h3 class="card-title">Resume</h3>
+                    <p class="card-description">Upload your resume in PDF or DOCX format</p>
+                    <div class="file-input-wrapper">
+                        <InputFile OnChange="@OnResumeSelected" class="file-input" accept=".pdf,.docx" />
+                        <div class="file-input-overlay">
+                            <span class="file-input-text">
+                                @if (resumeFile != null)
+                                {
+                                    <span class="file-selected">✓ @resumeFile.Name</span>
+                                }
+                                else
+                                {
+                                    <span>Choose File or Drag & Drop</span>
+                                }
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upload-card neon-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Job Description</h3>
+                    <p class="card-description">Upload the job description you want to match against</p>
+                    <div class="file-input-wrapper">
+                        <InputFile OnChange="@OnJobDescriptionSelected" class="file-input" accept=".pdf,.docx" />
+                        <div class="file-input-overlay">
+                            <span class="file-input-text">
+                                @if (jobDescriptionFile != null)
+                                {
+                                    <span class="file-selected">✓ @jobDescriptionFile.Name</span>
+                                }
+                                else
+                                {
+                                    <span>Choose File or Drag & Drop</span>
+                                }
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="analyze-section">
+            <button class="ai-analyze-btn" @onclick="AnalyzeFiles" disabled="@(!CanAnalyze)">
+                @if (isAnalyzing)
+                {
+                    <div class="btn-loading">
+                        <div class="loading-spinner"></div>
+                        <span>Analyzing...</span>
+                    </div>
+                }
+                else
+                {
+                    <span class="btn-text">
+                        <span class="btn-icon">⚡</span>
+                        Analyze with AI
+                    </span>
+                }
+            </button>
+        </div>
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="error-message">
+                <span class="error-icon">⚠️</span>
+                @errorMessage
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private IBrowserFile? resumeFile;
+    private IBrowserFile? jobDescriptionFile;
+    private bool isAnalyzing;
+    private string? errorMessage;
+
+    private bool CanAnalyze => resumeFile != null && jobDescriptionFile != null && !isAnalyzing;
+
+    private async Task OnResumeSelected(InputFileChangeEventArgs e)
+    {
+        resumeFile = e.File;
+        errorMessage = null;
+    }
+
+    private async Task OnJobDescriptionSelected(InputFileChangeEventArgs e)
+    {
+        jobDescriptionFile = e.File;
+        errorMessage = null;
+    }
+
+    private async Task AnalyzeFiles()
+    {
+        if (resumeFile == null || jobDescriptionFile == null) return;
+
+        try
+        {
+            isAnalyzing = true;
+            errorMessage = null;
+
+            // Get current user if authenticated
+            var currentUser = await AuthService.GetCurrentUserAsync();
+            var userId = currentUser?.UserId;
+
+            var result = await AnalysisService.AnalyzeResumeAsync(resumeFile, jobDescriptionFile, userId);
+            NavigationManager.NavigateTo($"/results");
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "An error occurred while analyzing the files. Please try again.";
+        }
+        finally
+        {
+            isAnalyzing = false;
+        }
+    }
+} 

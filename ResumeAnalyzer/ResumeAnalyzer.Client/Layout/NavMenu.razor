@@ -1,0 +1,131 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand skillsync-brand" href="">
+            <img src="skillsync_icon.png" alt="Skill-Sync AI" class="brand-icon" />
+            <span class="brand-text">Skill-Sync AI</span>
+        </a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-upload" aria-hidden="true"></span> Upload
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="results">
+                <span class="bi bi-graph-up" aria-hidden="true"></span> Results
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="history">
+                <span class="bi bi-clock-history" aria-hidden="true"></span> History
+            </NavLink>
+        </div>
+        
+        <div class="nav-separator"></div>
+        
+        @if (isAuthenticated)
+        {
+            <div class="nav-item px-3">
+                <div class="nav-user-card">
+                    <div class="user-avatar">
+                        <span class="user-icon">👤</span>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">@currentUser?.Username</span>
+                        <span class="user-status">Online</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item px-3">
+                <button class="btn-logout" @onclick="HandleLogout">
+                    <span class="logout-icon">🚪</span>
+                    <span>Logout</span>
+                </button>
+            </div>
+        }
+        else
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="login">
+                    <span class="bi bi-box-arrow-in-right" aria-hidden="true"></span> Login
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="register">
+                    <span class="bi bi-person-plus" aria-hidden="true"></span> Register
+                </NavLink>
+            </div>
+        }
+    </nav>
+</div>
+
+@using ResumeAnalyzer.Client.Services
+@using ResumeAnalyzer.Shared.Models
+@inject IAuthService AuthService
+@inject NavigationManager Navigation
+@implements IDisposable
+
+@code {
+    private bool collapseNavMenu = true;
+    private bool isAuthenticated = false;
+    private UserSession? currentUser;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CheckAuthenticationStatus();
+        
+        // Listen for navigation changes to update auth state
+        Navigation.LocationChanged += OnLocationChanged;
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await CheckAuthenticationStatus();
+    }
+
+    private async void OnLocationChanged(object? sender, Microsoft.AspNetCore.Components.Routing.LocationChangedEventArgs e)
+    {
+        await CheckAuthenticationStatus();
+    }
+
+    private async Task CheckAuthenticationStatus()
+    {
+        isAuthenticated = await AuthService.IsAuthenticatedAsync();
+        if (isAuthenticated)
+        {
+            currentUser = await AuthService.GetCurrentUserAsync();
+        }
+        else
+        {
+            currentUser = null;
+        }
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        Navigation.LocationChanged -= OnLocationChanged;
+    }
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private async Task HandleLogout()
+    {
+        await AuthService.LogoutAsync();
+        isAuthenticated = false;
+        currentUser = null;
+        Navigation.NavigateTo("/login", forceLoad: true);
+    }
+}

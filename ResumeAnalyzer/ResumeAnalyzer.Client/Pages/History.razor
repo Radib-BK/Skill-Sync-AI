@@ -1,0 +1,200 @@
+@page "/history"
+@using ResumeAnalyzer.Client.Services
+@using ResumeAnalyzer.Shared.Models
+@inject IResumeAnalysisService AnalysisService
+@inject IAuthService AuthService
+
+<PageTitle>History - Skill-Sync AI</PageTitle>
+
+<div class="ai-background">
+    <!-- Animated background elements -->
+    <div class="ai-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Neural network animation -->
+    <div class="neural-network">
+        <div class="node node-1"></div>
+        <div class="node node-2"></div>
+        <div class="node node-3"></div>
+        <div class="node node-4"></div>
+        <div class="connection connection-1"></div>
+        <div class="connection connection-2"></div>
+        <div class="connection connection-3"></div>
+    </div>
+</div>
+
+<div class="ai-page-container">
+    <div class="ai-page-content">
+        <h1 class="ai-page-title">
+            <span class="title-icon">📊</span>
+            Analysis History
+        </h1>
+
+        @if (history == null)
+        {
+            <div class="info-card">
+                <div class="no-data">
+                    <div class="loading-spinner" style="margin: 0 auto 1rem;"></div>
+                    <p>Loading analysis history...</p>
+                </div>
+            </div>
+        }
+        else if (!history.Any())
+        {
+            <div class="empty-state-container">
+                <div class="empty-state-content">
+                    <div class="empty-state-icon">
+                        <span class="large-icon">📊</span>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <h2 class="empty-state-title">No Analysis History Yet</h2>
+                    <p class="empty-state-description">
+                        Your analysis history will appear here once you start analyzing resumes and job descriptions.
+                    </p>
+                    
+                    <div class="empty-state-action">
+                        <a href="/" class="ai-button primary-action">
+                            <span class="button-icon">🚀</span>
+                            Start Your First Analysis
+                        </a>
+                    </div>
+                    
+                    @if (currentUser == null)
+                    {
+                        <div class="auth-notice">
+                            <div class="notice-icon">⚠️</div>
+                            <div class="notice-content">
+                                <p><strong>Temporary Storage:</strong> Your analysis history will be lost when you refresh the page.</p>
+                                <div class="auth-actions">
+                                    <a href="/login" class="auth-link">Login</a>
+                                    <span class="auth-separator">or</span>
+                                    <a href="/register" class="auth-link">Register</a>
+                                    <span class="auth-text">to save your history permanently</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="user-notice">
+                            <div class="notice-icon">✅</div>
+                            <p>Your analysis history will be saved permanently to your account.</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="history-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Resume</th>
+                            <th>Job Title</th>
+                            <th>Match %</th>
+                            <th>Missing Skills</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in history)
+                        {
+                            <tr>
+                                <td>@item.CreatedAt.ToString("MMM dd, yyyy")</td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <span>📄</span>
+                                        @item.ResumeName
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <span>🎯</span>
+                                        @item.JobTitle
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <span class="match-percentage" style="font-size: 1.2rem; margin: 0;">@item.MatchPercentage.ToString("F1")%</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="max-width: 200px;">
+                                        @if (item.MissingSkills.Any())
+                                        {
+                                            @foreach (var skill in item.MissingSkills.Take(3))
+                                            {
+                                                <span class="skill-badge" style="font-size: 0.7rem; padding: 0.2rem 0.6rem; margin: 0.1rem;">@skill</span>
+                                            }
+                                            @if (item.MissingSkills.Count > 3)
+                                            {
+                                                <span class="skill-badge" style="font-size: 0.7rem; padding: 0.2rem 0.6rem; margin: 0.1rem; background: rgba(0,212,255,0.2); color: #00d4ff;">+@(item.MissingSkills.Count - 3) more</span>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span style="color: #00ff88;">✓ Perfect Match</span>
+                                        }
+                                    </div>
+                                </td>
+                                <td>
+                                    @if (item.MatchPercentage >= 80)
+                                    {
+                                        <span style="color: #00ff88;">🟢 Excellent</span>
+                                    }
+                                    else if (item.MatchPercentage >= 60)
+                                    {
+                                        <span style="color: #ffc107;">🟡 Good</span>
+                                    }
+                                    else
+                                    {
+                                        <span style="color: #ff6b6b;">🔴 Needs Work</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="/" class="ai-button">
+                    <span class="btn-icon">⚡</span>
+                    Analyze New Resume
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<AnalysisHistory>? history;
+    private UserSession? currentUser;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Get current user if authenticated
+            currentUser = await AuthService.GetCurrentUserAsync();
+            var userId = currentUser?.UserId;
+
+            history = await AnalysisService.GetAnalysisHistoryAsync(userId);
+        }
+        catch (Exception ex)
+        {
+            // Handle error - could show error message
+            history = new List<AnalysisHistory>();
+        }
+    }
+} 

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ResumeAnalyzer.Shared/1.0.0": {
+        "runtime": {
+          "ResumeAnalyzer.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ResumeAnalyzer.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

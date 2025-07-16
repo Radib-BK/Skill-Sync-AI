@@ -1,0 +1,145 @@
+@page "/results"
+@using ResumeAnalyzer.Shared.Models
+@using ResumeAnalyzer.Client.Services
+@inject NavigationManager NavigationManager
+@inject IResumeAnalysisService AnalysisService
+
+<PageTitle>Results - Skill-Sync AI</PageTitle>
+
+<div class="ai-background">
+    <!-- Animated background elements -->
+    <div class="ai-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Neural network animation -->
+    <div class="neural-network">
+        <div class="node node-1"></div>
+        <div class="node node-2"></div>
+        <div class="node node-3"></div>
+        <div class="node node-4"></div>
+        <div class="connection connection-1"></div>
+        <div class="connection connection-2"></div>
+        <div class="connection connection-3"></div>
+    </div>
+</div>
+
+<div class="ai-page-container">
+    <div class="ai-page-content">
+        <h1 class="ai-page-title">
+            <span class="title-icon">🤖</span>
+            Analysis Results
+        </h1>
+
+        @if (result == null)
+        {
+            <div class="empty-state-container">
+                <div class="empty-state-content">
+                    <div class="empty-state-icon">
+                        <span class="large-icon">🤖</span>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <h2 class="empty-state-title">No Analysis Results</h2>
+                    <p class="empty-state-description">
+                        Upload your resume and job description to get AI-powered analysis and matching insights.
+                    </p>
+                    
+                    <div class="empty-state-action">
+                        <a href="/" class="ai-button primary-action">
+                            <span class="button-icon">📄</span>
+                            Upload Documents
+                        </a>
+                    </div>
+                    
+                    <div class="feature-preview">
+                        <h3>What you'll get:</h3>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <span class="feature-icon">📈</span>
+                                <span class="feature-text">Match Score</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">💡</span>
+                                <span class="feature-text">Skill Analysis</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🎯</span>
+                                <span class="feature-text">Recommendations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="results-grid">
+                <div class="match-score-card">
+                    <h5 class="card-title">Match Score</h5>
+                    <div class="match-percentage">@result.MatchPercentage.ToString("F1")%</div>
+                    <div class="progress" style="height: 10px; background: rgba(255,255,255,0.1);">
+                        <div class="progress-bar @GetProgressBarClass(result.MatchPercentage)" 
+                             style="width: @result.MatchPercentage%; height: 100%;"
+                             aria-valuenow="@result.MatchPercentage" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <h5>Missing Skills</h5>
+                        @if (result.MissingSkills.Any())
+                        {
+                            <div class="skills-container">
+                                @foreach (var skill in result.MissingSkills)
+                                {
+                                    <span class="skill-badge">@skill</span>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="recommendation-text">🎉 No missing skills identified! You're a perfect match!</p>
+                        }
+                    </div>
+
+                    <div class="info-card">
+                        <h5>AI Recommendation</h5>
+                        <p class="recommendation-text">@result.Recommendation</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="ai-button" @onclick="@(() => NavigationManager.NavigateTo("/"))">
+                <span class="btn-icon">⚡</span>
+                Analyze Another Resume
+            </button>
+        }
+    </div>
+</div>
+
+@code {
+    private AnalysisResponse? result;
+
+    protected override void OnInitialized()
+    {
+        result = AnalysisService.LatestResult;
+    }
+
+    private string GetProgressBarClass(float percentage)
+    {
+        return percentage switch
+        {
+            >= 80 => "bg-success",
+            >= 60 => "bg-warning",
+            _ => "bg-danger"
+        };
+    }
+} 
