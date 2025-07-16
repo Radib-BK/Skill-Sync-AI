@@ -2,9 +2,27 @@
 
 <div align="center">
 
-![SkillSync AI Logo](ResumeAnalyzer.Client/wwwroot/skillsync_icon.png)
+![SkillSync AI Logo](ResumeAnalyzer/ResumeAnalyzer.Client/wwwroot/skillsync_icon.png)
 
 A modern, AI-powered resume analysis system that helps match candidates with job requirements using advanced NLP and domain-specific scoring.
+
+</div>
+
+## 📸 Screenshots
+
+<div align="center">
+
+### Login Page
+![Login Page](Screenshots/login.png)
+
+### Resume Analysis Dashboard
+![Dashboard](Screenshots/dashboard.png)
+
+### Analysis Results
+![Results](Screenshots/results.png)
+
+### History View
+![History](Screenshots/history.png)
 
 </div>
 
@@ -17,17 +35,6 @@ A modern, AI-powered resume analysis system that helps match candidates with job
 - **Comprehensive Skill Detection**: Identifies technical, soft, and domain-specific skills
 - **Smart Recommendations**: Provides targeted suggestions for skill improvement
 
-### Advanced Scoring System
-- **Semantic Understanding**: 25% weight on overall context matching
-- **Skill Matching**: 75% weight on specific skill requirements
-- **Smart Bonuses**:
-  - Domain Match: Up to 15% boost
-  - Skill Density: Up to 10% for 5+ matching skills
-  - Experience Match: Up to 10% boost
-- **Intelligent Penalties**:
-  - Domain Mismatch: Up to -20%
-  - Experience Mismatch: Up to -15%
-
 ### User Features
 - **Secure Authentication**: Full user authentication system
 - **History Tracking**: Save and track analysis results
@@ -36,17 +43,25 @@ A modern, AI-powered resume analysis system that helps match candidates with job
 
 ## 🛠️ Technology Stack
 
-### Frontend (Blazor WebAssembly)
+### Frontend (C# / Blazor WebAssembly)
+- **Language**: C# 12
 - **Framework**: .NET 8.0 Blazor WebAssembly
 - **UI Components**: Custom-built modern components
 - **Styling**: CSS with modern animations
 - **State Management**: Built-in Blazor state management
 
-### Backend (ASP.NET Core)
+### Backend (C# / ASP.NET Core)
+- **Language**: C# 12
 - **Framework**: .NET 8.0 ASP.NET Core
-- **Database**: MySQL with Entity Framework Core
+- **ORM**: Entity Framework Core 8.0
+- **Database**: MySQL with EF Core
 - **Authentication**: JWT-based authentication
 - **API Documentation**: Swagger/OpenAPI
+
+### Shared (C#)
+- **Models**: Shared C# class library
+- **DTOs**: Cross-platform data transfer objects
+- **Validation**: Shared validation logic
 
 ### AI Service (Python)
 - **Framework**: FastAPI
