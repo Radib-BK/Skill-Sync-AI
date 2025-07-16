@@ -1058,6 +1058,7 @@ D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Client\obj\Debug\net8.0\Resum
 D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Client\obj\Debug\net8.0\refint\ResumeAnalyzer.Client.dll
 D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Client\obj\Debug\net8.0\ResumeAnalyzer.Client.pdb
 D:\Personal Projects\ResumeAnalyzer\ResumeAnalyzer.Client\obj\Debug\net8.0\ref\ResumeAnalyzer.Client.dll
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.js
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.js.map
@@ -1101,6 +1102,10 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Win32.Registry.wasm
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\mscorlib.wasm
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\netstandard.wasm
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\ResumeAnalyzer.Client.pdb
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\ResumeAnalyzer.Client.wasm
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\ResumeAnalyzer.Shared.pdb
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\ResumeAnalyzer.Shared.wasm
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.AppContext.wasm
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Buffers.wasm
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.Concurrent.wasm
@@ -1263,21 +1268,6 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Xml.XPath.wasm
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Xml.XPath.XDocument.wasm
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\WindowsBase.wasm
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\icudt_no_CJK.dat.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.runtime.8.0.18.ara0hcwskm.js.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\icudt_EFIGS.dat.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.js.map.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.native.wasm.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.js.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.native.8.0.18.v13w7wxdwc.js.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.runtime.js.map.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\icudt_CJK.dat.gz
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\ResumeAnalyzer.Client.pdb
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\ResumeAnalyzer.Client.wasm
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\ResumeAnalyzer.Shared.pdb
-D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\ResumeAnalyzer.Shared.wasm
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.TextWriterTraceListener.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Text.Encoding.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Resources.Writer.wasm.gz
@@ -1334,6 +1324,7 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Win32.Primitives.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Tasks.Extensions.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.Serialization.Xml.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\icudt_no_CJK.dat.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Diagnostics.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Logging.Abstractions.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.FileSystem.AccessControl.wasm.gz
@@ -1342,6 +1333,7 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Private.Uri.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Overlapped.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Abstractions.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.runtime.8.0.18.ara0hcwskm.js.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.Mail.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Formats.Asn1.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Timer.wasm.gz
@@ -1355,6 +1347,7 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Data.DataSetExtensions.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.CSharp.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Console.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\icudt_EFIGS.dat.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.Contracts.wasm.gz
@@ -1386,7 +1379,9 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Pipes.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.Primitives.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.js.map.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.CompilerServices.VisualC.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.native.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.TraceSource.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Buffers.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Diagnostics.Abstractions.wasm.gz
@@ -1399,6 +1394,7 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.WebHeaderCollection.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Physical.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Logging.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.NameResolution.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Resources.Reader.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.Loader.wasm.gz
@@ -1439,6 +1435,7 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Metadata.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.VisualBasic.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Private.Xml.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.js.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Text.Json.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.WebClient.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.ValueTuple.wasm.gz
@@ -1446,6 +1443,7 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.Http.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Claims.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.native.8.0.18.v13w7wxdwc.js.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Cryptography.OpenSsl.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Xml.XPath.XDocument.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\ResumeAnalyzer.Shared.wasm.gz
@@ -1469,12 +1467,14 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debu
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.UnmanagedMemoryStream.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.Serialization.Formatters.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.runtime.js.map.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.InteropServices.JavaScript.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.FileVersionInfo.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Cryptography.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.wasm.gz
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\icudt_CJK.dat.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Thread.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.wasm.gz
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.Annotations.wasm.gz

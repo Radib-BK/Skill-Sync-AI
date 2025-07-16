@@ -607,7 +607,7 @@ html, body {
     background: linear-gradient(135deg, #00d4ff, #0099cc);
     border: none;
     border-radius: 25px;
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 1.2rem;
     font-family: 'Orbitron', monospace;
     font-size: 1rem;
     font-weight: 600;
@@ -620,6 +620,7 @@ html, body {
     display: block;
     margin: 2rem auto 0;
     text-decoration: none;
+    max-width: 25rem !important;
 }
 
 .ai-button:hover {
