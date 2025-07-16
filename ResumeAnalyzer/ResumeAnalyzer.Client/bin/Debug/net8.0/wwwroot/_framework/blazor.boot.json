@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ResumeAnalyzer.Client",
   "resources": {
-    "hash": "sha256-wBxIAeWmvHER331eRq6cwNmoBSamK4E6+Ay3m6IbLEU=",
+    "hash": "sha256-36hEGNz+Y8uG+xRURmSD4jhnChgxjdglLzkkP1uB6RM=",
     "jsModuleNative": {
       "dotnet.native.8.0.18.v13w7wxdwc.js": "sha256-1QpKPnxEuRCElzcp+e3MrovJeAJkuzqKmRQay/6Aa08="
     },
@@ -212,12 +212,12 @@
       "mscorlib.wasm": "sha256-UnQd0YPXNpwbXsKqO8RAqgUVuwZsSpprfAIPpdV/y1Q=",
       "netstandard.wasm": "sha256-/QbD8JDZyYwfyk89W3qJL3HTAINDCVziZIySHIZcDhw=",
       "System.Private.CoreLib.wasm": "sha256-oBqNgH7R24FqGbaL3XnfQDqn3rk28jERFosgAryKT6U=",
-      "ResumeAnalyzer.Shared.wasm": "sha256-9/1r1P9nIGPc7dtd6WwJRewMXvC/NgN1G5RqeO2b00A=",
-      "ResumeAnalyzer.Client.wasm": "sha256-C2+VyRF2l2GvVEaFJmCfa2jWNfypnk+kWCGTOEdAVXY="
+      "ResumeAnalyzer.Shared.wasm": "sha256-PyfdmwaR+rN8oKBZBiOt2CFe3sF8jUB+7QP9YF129Sw=",
+      "ResumeAnalyzer.Client.wasm": "sha256-679HFrJvkSJlf3VAXID8zy6aNvL975Hy7iZ34BPSKxE="
     },
     "pdb": {
-      "ResumeAnalyzer.Shared.pdb": "sha256-CBLBpiwZL5gkXx0v4B2wBj6O1+37QYYnTYS9rjvWG9k=",
-      "ResumeAnalyzer.Client.pdb": "sha256-r/GMpKkVc34PR497C9t2NrVYTMU+PW4hoYFQSI9wsB4="
+      "ResumeAnalyzer.Shared.pdb": "sha256-0RKnhjP46TjtLKVYMAus8X2eRjvJqHah8R6krTv0WFM=",
+      "ResumeAnalyzer.Client.pdb": "sha256-eFT/70R5AH4Thtdhf1WAAyluSiPJlez8XZ7SV0pk9N0="
     }
   },
   "cacheBootResources": true,

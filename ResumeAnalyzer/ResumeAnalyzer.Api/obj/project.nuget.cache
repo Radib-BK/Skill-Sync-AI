@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xfJ6l9PEz38=",
+  "dgSpecHash": "8acH1W8QvSU=",
   "success": true,
-  "projectFilePath": "D:\\Personal Projects\\ResumeAnalyzer\\ResumeAnalyzer.Api\\ResumeAnalyzer.Api.csproj",
+  "projectFilePath": "D:\\Personal Projects\\Skill-Sync-AI\\ResumeAnalyzer\\ResumeAnalyzer.Api\\ResumeAnalyzer.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\documentformat.openxml\\3.0.1\\documentformat.openxml.3.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\documentformat.openxml.framework\\3.0.1\\documentformat.openxml.framework.3.0.1.nupkg.sha512",

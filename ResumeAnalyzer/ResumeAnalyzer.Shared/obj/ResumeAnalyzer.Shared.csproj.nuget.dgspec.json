@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Personal Projects\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\ResumeAnalyzer.Shared.csproj": {}
+    "D:\\Personal Projects\\Skill-Sync-AI\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\ResumeAnalyzer.Shared.csproj": {}
   },
   "projects": {
-    "D:\\Personal Projects\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\ResumeAnalyzer.Shared.csproj": {
+    "D:\\Personal Projects\\Skill-Sync-AI\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\ResumeAnalyzer.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Personal Projects\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\ResumeAnalyzer.Shared.csproj",
+        "projectUniqueName": "D:\\Personal Projects\\Skill-Sync-AI\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\ResumeAnalyzer.Shared.csproj",
         "projectName": "ResumeAnalyzer.Shared",
-        "projectPath": "D:\\Personal Projects\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\ResumeAnalyzer.Shared.csproj",
+        "projectPath": "D:\\Personal Projects\\Skill-Sync-AI\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\ResumeAnalyzer.Shared.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Personal Projects\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\obj\\",
+        "outputPath": "D:\\Personal Projects\\Skill-Sync-AI\\ResumeAnalyzer\\ResumeAnalyzer.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
