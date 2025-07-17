@@ -1,86 +1,93 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="app-layout">
-    <!-- Top Bar with Hamburger (Mobile Only) -->
-    <div class="top-bar">
-        <div class="brand">
-            <img src="skillsync_icon.png" alt="Skill-Sync AI" class="brand-icon" />
-            <span class="brand-text">Skill-Sync AI</span>
-        </div>
-        <button class="hamburger" @onclick="ToggleSidebar">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-
-    <!-- Sidebar -->
-    <div class="sidebar @(sidebarOpen ? "open" : "")">
-        <div class="sidebar-header">
-            <div class="brand-desktop">
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <!-- Hamburger Menu (Mobile Only) -->
+            <button class="hamburger-menu" @onclick="ToggleSidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Logo/Brand -->
+            <div class="navbar-brand">
                 <img src="skillsync_icon.png" alt="Skill-Sync AI" class="brand-icon" />
                 <span class="brand-text">Skill-Sync AI</span>
             </div>
+            
+            <!-- Right Side Links -->
+            <div class="navbar-right">
+                @if (!isAuthenticated)
+                {
+                    <NavLink href="login" class="nav-link">Login</NavLink>
+                    <NavLink href="register" class="nav-link">Register</NavLink>
+                }
+                else
+                {
+                    <span class="user-greeting">@currentUser?.Username</span>
+                }
+            </div>
         </div>
+    </nav>
 
-        <nav class="nav-menu">
-            <NavLink class="nav-item" href="" Match="NavLinkMatch.All" @onclick="CloseSidebar">
-                <span class="nav-icon">📁</span>
-                <span>Upload</span>
-            </NavLink>
-            <NavLink class="nav-item" href="results" @onclick="CloseSidebar">
-                <span class="nav-icon">📊</span>
-                <span>Results</span>
-            </NavLink>
-            <NavLink class="nav-item" href="history" @onclick="CloseSidebar">
-                <span class="nav-icon">📜</span>
-                <span>History</span>
-            </NavLink>
-        </nav>
-
-        <div class="user-section">
+    <!-- Sidebar -->
+    <div class="sidebar @(sidebarOpen ? "open" : "")">
+        <div class="sidebar-content">
+            <!-- Navigation Links -->
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li>
+                        <NavLink href="" Match="NavLinkMatch.All" class="nav-item" @onclick="CloseSidebar">
+                            <span class="nav-icon">📁</span>
+                            <span>Upload</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="results" class="nav-item" @onclick="CloseSidebar">
+                            <span class="nav-icon">📊</span>
+                            <span>Results</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="history" class="nav-item" @onclick="CloseSidebar">
+                            <span class="nav-icon">📜</span>
+                            <span>History</span>
+                        </NavLink>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- User Section (Only when authenticated) -->
             @if (isAuthenticated)
             {
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <span>👨‍💻</span>
-                    </div>
-                    <div class="user-info">
-                        <div class="username">@currentUser?.Username</div>
-                        <div class="status">
-                            <span class="status-dot"></span>
-                            Online
+                <div class="user-section">
+                    <div class="user-card">
+                        <div class="user-avatar">👨‍💻</div>
+                        <div class="user-info">
+                            <div class="username">@currentUser?.Username</div>
+                            <div class="status">
+                                <span class="status-dot"></span>
+                                Online
+                            </div>
                         </div>
                     </div>
-                </div>
-                <button class="logout-btn" @onclick="HandleLogout">
-                    <span class="logout-icon">🚪</span>
-                    Logout
-                </button>
-            }
-            else
-            {
-                <div class="auth-buttons">
-                    <NavLink class="auth-btn" href="login" @onclick="CloseSidebar">
-                        <span>🔐</span>
-                        Login
-                    </NavLink>
-                    <NavLink class="auth-btn" href="register" @onclick="CloseSidebar">
-                        <span>✨</span>
-                        Register
-                    </NavLink>
+                    <button class="logout-btn" @onclick="HandleLogout">
+                        🚪 Logout
+                    </button>
                 </div>
             }
         </div>
     </div>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <main class="main-content">
         @Body
-    </div>
+    </main>
 
     <!-- Mobile Overlay -->
-    <div class="overlay @(sidebarOpen ? "active" : "")" @onclick="CloseSidebar"></div>
+    <div class="sidebar-overlay @(sidebarOpen ? "active" : "")" @onclick="CloseSidebar"></div>
 </div>
 
 @using ResumeAnalyzer.Client.Services
