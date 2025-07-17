@@ -81,15 +81,21 @@
 
     protected override async Task OnInitializedAsync()
     {
+        // Set initial collapse state based on screen size
+        // For now, we'll start collapsed and let CSS handle the responsive behavior
         await CheckAuthenticationStatus();
         
         // Listen for navigation changes to update auth state
         Navigation.LocationChanged += OnLocationChanged;
     }
 
-    protected override async Task OnParametersSetAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        await CheckAuthenticationStatus();
+        if (firstRender)
+        {
+            // Use JavaScript to detect screen size and set initial state
+            await CheckScreenSize();
+        }
     }
 
     private async void OnLocationChanged(object? sender, Microsoft.AspNetCore.Components.Routing.LocationChangedEventArgs e)
@@ -109,6 +115,12 @@
             currentUser = null;
         }
         StateHasChanged();
+    }
+
+    private async Task CheckScreenSize()
+    {
+        // This will be overridden by CSS media queries anyway
+        // The CSS will handle the responsive behavior
     }
 
     public void Dispose()
