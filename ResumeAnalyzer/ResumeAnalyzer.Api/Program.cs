@@ -64,15 +64,52 @@ app.UseForwardedHeaders();
 app.UseHttpsRedirection();
 app.UseCors("AllowBlazorClient");
 app.UseAuthorization();
+
+// Add health check endpoint
+app.MapGet("/health", () => Results.Ok(new { 
+    status = "healthy", 
+    timestamp = DateTime.UtcNow,
+    environment = app.Environment.EnvironmentName 
+}));
+
+// Add API info endpoint
+app.MapGet("/", () => Results.Ok(new { 
+    message = "SkillSync Resume Analyzer API", 
+    version = "1.0.0",
+    environment = app.Environment.EnvironmentName,
+    timestamp = DateTime.UtcNow
+}));
+
 app.MapControllers();
 
 // Ensure database is created and migrations are applied
 if (!app.Environment.IsDevelopment())
 {
-    using (var scope = app.Services.CreateScope())
+    try
     {
-        var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-        db.Database.Migrate();
+        using (var scope = app.Services.CreateScope())
+        {
+            var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+            
+            // Check if database can be connected to
+            if (db.Database.CanConnect())
+            {
+                logger.LogInformation("Database connection successful. Applying migrations...");
+                db.Database.Migrate();
+                logger.LogInformation("Database migrations applied successfully.");
+            }
+            else
+            {
+                logger.LogWarning("Cannot connect to database. Skipping migrations.");
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        // Log the error but don't crash the application
+        var logger = app.Services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Error during database migration. Application will continue without migrations.");
     }
 }
 
