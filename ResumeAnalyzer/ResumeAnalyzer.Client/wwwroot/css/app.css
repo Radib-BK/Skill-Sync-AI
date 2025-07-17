@@ -322,6 +322,13 @@ html, body {
     cursor: pointer;
 }
 
+.file-input-wrapper.disabled,
+.file-input-overlay.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
 .file-input {
     position: absolute;
     width: 100%;
@@ -329,6 +336,10 @@ html, body {
     opacity: 0;
     cursor: pointer;
     z-index: 3;
+}
+
+.file-input:disabled {
+    pointer-events: none;
 }
 
 .file-input-overlay {
@@ -366,6 +377,12 @@ html, body {
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
+.file-input-overlay.disabled:hover {
+    border-color: #00d4ff;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
 .file-input-text {
     color: #c0c0c0;
     font-weight: 600;
@@ -377,6 +394,83 @@ html, body {
 .file-selected {
     color: #00ff88;
     text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* Option divider styling */
+.option-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.option-divider::before,
+.option-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(136, 136, 136, 0.5), transparent);
+}
+
+.option-divider span {
+    padding: 0 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(136, 136, 136, 0.3);
+}
+
+/* Text input styling */
+.text-input-wrapper {
+    position: relative;
+}
+
+.job-description-textarea {
+    width: 100%;
+    min-height: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #00d4ff;
+    border-radius: 15px;
+    padding: 1rem;
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.job-description-textarea:focus {
+    outline: none;
+    border-color: #00ffff;
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.job-description-textarea:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #666;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.job-description-textarea::placeholder {
+    color: #888;
+}
+
+.text-input-status {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.text-selected {
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* AI Analyze Button - Made smaller */

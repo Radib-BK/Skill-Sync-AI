@@ -73,10 +73,12 @@
                 <div class="card-content">
                     <div class="card-icon">🎯</div>
                     <h3 class="card-title">Job Description</h3>
-                    <p class="card-description">Upload the job description you want to match against</p>
-                    <div class="file-input-wrapper">
-                        <InputFile OnChange="@OnJobDescriptionSelected" class="file-input" accept=".pdf,.docx" />
-                        <div class="file-input-overlay">
+                    <p class="card-description">Upload a file or paste the job description text</p>
+                    
+                    <!-- File Upload Section -->
+                    <div class="file-input-wrapper" style="margin-bottom: 1rem;">
+                        <InputFile OnChange="@OnJobDescriptionSelected" class="file-input" accept=".pdf,.docx,.txt" disabled="@(!string.IsNullOrEmpty(jobDescriptionText))" />
+                        <div class="file-input-overlay @((!string.IsNullOrEmpty(jobDescriptionText)) ? "disabled" : "")">
                             <span class="file-input-text">
                                 @if (jobDescriptionFile != null)
                                 {
@@ -88,6 +90,27 @@
                                 }
                             </span>
                         </div>
+                    </div>
+                    
+                    <!-- OR Divider -->
+                    <div class="option-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <!-- Text Area Section -->
+                    <div class="text-input-wrapper">
+                        <textarea class="job-description-textarea" 
+                                  placeholder="Paste job description here..."
+                                  @bind="jobDescriptionText"
+                                  @oninput="OnJobDescriptionTextChanged"
+                                  disabled="@(jobDescriptionFile != null)"
+                                  rows="6"></textarea>
+                        @if (!string.IsNullOrEmpty(jobDescriptionText))
+                        {
+                            <div class="text-input-status">
+                                <span class="text-selected">✓ Text entered (@jobDescriptionText.Length characters)</span>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -125,10 +148,11 @@
 @code {
     private IBrowserFile? resumeFile;
     private IBrowserFile? jobDescriptionFile;
+    private string? jobDescriptionText;
     private bool isAnalyzing;
     private string? errorMessage;
 
-    private bool CanAnalyze => resumeFile != null && jobDescriptionFile != null && !isAnalyzing;
+    private bool CanAnalyze => resumeFile != null && (jobDescriptionFile != null || !string.IsNullOrEmpty(jobDescriptionText)) && !isAnalyzing;
 
     private async Task OnResumeSelected(InputFileChangeEventArgs e)
     {
@@ -139,12 +163,18 @@
     private async Task OnJobDescriptionSelected(InputFileChangeEventArgs e)
     {
         jobDescriptionFile = e.File;
+        jobDescriptionText = null; // Clear text if file is selected
         errorMessage = null;
+    }
+
+    private void OnJobDescriptionTextChanged()
+    {
+        jobDescriptionFile = null; // Clear file if text is entered
     }
 
     private async Task AnalyzeFiles()
     {
-        if (resumeFile == null || jobDescriptionFile == null) return;
+        if (resumeFile == null || (jobDescriptionFile == null && string.IsNullOrEmpty(jobDescriptionText))) return;
 
         try
         {
@@ -155,8 +185,19 @@
             var currentUser = await AuthService.GetCurrentUserAsync();
             var userId = currentUser?.UserId;
 
-            var result = await AnalysisService.AnalyzeResumeAsync(resumeFile, jobDescriptionFile, userId);
-                            NavigationManager.NavigateTo("results");
+            // Handle both file and text input for job description
+            if (jobDescriptionFile != null)
+            {
+                // Use file input
+                var result = await AnalysisService.AnalyzeResumeAsync(resumeFile, jobDescriptionFile, userId);
+            }
+            else if (!string.IsNullOrEmpty(jobDescriptionText))
+            {
+                // Use text input - convert to file-like object
+                var result = await AnalysisService.AnalyzeResumeWithTextAsync(resumeFile, jobDescriptionText, userId);
+            }
+            
+            NavigationManager.NavigateTo("results");
         }
         catch (Exception ex)
         {
