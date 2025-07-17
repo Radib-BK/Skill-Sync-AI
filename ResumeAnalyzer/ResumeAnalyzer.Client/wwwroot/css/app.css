@@ -524,12 +524,12 @@ body {
 
 .copyright-text {
     font-size: 0.75rem;
-    color: rgba(180, 220, 250, 0.5); /* subtle soft blue */
+    color: rgba(180, 220, 250, 0.647); /* subtle soft blue */
     text-align: center;
-    font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    text-shadow: 0 0 3px rgba(100, 255, 218, 0.2);
+    text-shadow: 0 0 3px rgba(100, 255, 219, 0.349);
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -781,7 +781,7 @@ body {
 
 /* File info section styling */
 .file-info {
-    margin-top: 2rem;
+    margin-top: 0.6rem;
     padding: 1.0rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
