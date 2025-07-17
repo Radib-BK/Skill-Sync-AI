@@ -73,16 +73,17 @@
 @implements IDisposable
 
 @code {
-    private bool collapseNavMenu = true;
+    private bool collapseNavMenu = false; // Default to expanded
     private bool isAuthenticated = false;
     private UserSession? currentUser;
 
+    // Desktop should never collapse, mobile should collapse by default
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     protected override async Task OnInitializedAsync()
     {
         // Set initial collapse state based on screen size
-        // For now, we'll start collapsed and let CSS handle the responsive behavior
+        // We'll let CSS handle the responsive behavior
         await CheckAuthenticationStatus();
         
         // Listen for navigation changes to update auth state
@@ -93,8 +94,8 @@
     {
         if (firstRender)
         {
-            // Use JavaScript to detect screen size and set initial state
-            await CheckScreenSize();
+            // Initialize with proper collapse state
+            StateHasChanged();
         }
     }
 
@@ -119,8 +120,8 @@
 
     private async Task CheckScreenSize()
     {
-        // This will be overridden by CSS media queries anyway
-        // The CSS will handle the responsive behavior
+        // CSS will handle the responsive behavior
+        // This is just for any future JavaScript integration
     }
 
     public void Dispose()
@@ -138,6 +139,6 @@
         await AuthService.LogoutAsync();
         isAuthenticated = false;
         currentUser = null;
-        Navigation.NavigateTo("login", forceLoad: true);
+        Navigation.NavigateTo("", forceLoad: true);
     }
 }

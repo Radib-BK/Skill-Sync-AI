@@ -14,6 +14,34 @@ html, body {
     min-height: 100vh;
 }
 
+/* Force sidebar visibility on desktop screens */
+@media (min-width: 641px) {
+    .sidebar {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .sidebar .collapse {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+    }
+    
+    .sidebar .nav-scrollable {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .sidebar .nav-scrollable.collapse {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
 /* Mobile navbar fix - hide sidebar on mobile for AI pages */
 @media (max-width: 640.98px) {
     .ai-page-container .sidebar,
@@ -1442,4 +1470,56 @@ code {
 .auth-notice .auth-link:hover {
     color: #ffffff;
     text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Global button override for logout button */
+.nav-item .btn-logout,
+button.btn-logout,
+.btn-logout {
+    background: linear-gradient(135deg, #ff4444, #cc0000) !important;
+    border: 1px solid rgba(255, 68, 68, 0.3) !important;
+    color: white !important;
+    width: 100% !important;
+    border-radius: 12px !important;
+    height: 2.8rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-weight: 600 !important;
+    margin: 0.5rem 0 !important;
+    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    font-size: 0.9rem !important;
+    text-transform: none !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+}
+
+.nav-item .btn-logout:hover,
+button.btn-logout:hover,
+.btn-logout:hover {
+    background: linear-gradient(135deg, #ff6666, #ff0000) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 25px rgba(255, 68, 68, 0.4) !important;
+    border-color: rgba(255, 68, 68, 0.5) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.nav-item .btn-logout:active,
+button.btn-logout:active,
+.btn-logout:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 10px rgba(255, 68, 68, 0.3) !important;
+}
+
+.nav-item .btn-logout:focus,
+button.btn-logout:focus,
+.btn-logout:focus {
+    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4) !important;
+    outline: none !important;
 }
