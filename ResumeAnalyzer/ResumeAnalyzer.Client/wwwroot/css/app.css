@@ -524,12 +524,15 @@ body {
 
 .copyright-text {
     font-size: 0.75rem;
-    color: rgba(192, 192, 192, 0.6);
+    color: rgba(180, 220, 250, 0.5); /* subtle soft blue */
     text-align: center;
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow: 0 0 3px rgba(100, 255, 218, 0.2);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
+
 
 /* ===== MAIN CONTENT ===== */
 .main-content {
@@ -778,7 +781,7 @@ body {
 
 /* File info section styling */
 .file-info {
-    margin-top: 2.4rem;
+    margin-top: 2rem;
     padding: 1.0rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
