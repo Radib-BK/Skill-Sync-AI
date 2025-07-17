@@ -17,10 +17,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore ResumeAnalyzer.Client/ResumeAnalyzer.Client.csproj
+        run: dotnet restore ResumeAnalyzer/ResumeAnalyzer.Client/ResumeAnalyzer.Client.csproj
 
       - name: Publish
-        run: dotnet publish ResumeAnalyzer.Client/ResumeAnalyzer.Client.csproj -c Release -o release --nologo
+        run: dotnet publish ResumeAnalyzer/ResumeAnalyzer.Client/ResumeAnalyzer.Client.csproj -c Release -o release --nologo
 
       - name: Update wwwroot/index.html for GitHub Pages
         run: |
