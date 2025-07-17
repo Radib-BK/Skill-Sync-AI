@@ -1,13 +1,154 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<div class="app-container">
+    <!-- Top Navigation Bar -->
+    <header class="top-navbar">
+        <div class="navbar-content">
+            <div class="brand-section">
+                <img src="skillsync_icon.png" alt="Skill-Sync AI" class="brand-icon" />
+                <span class="brand-text">Skill-Sync AI</span>
+            </div>
+            <div class="navbar-actions">
+                <button class="mobile-menu-toggle" @onclick="ToggleMobileMenu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-    <main>
-        <article class="content px-4">
+    <!-- Sidebar -->
+    <aside class="sidebar @(isMobileMenuOpen ? "mobile-open" : "")">
+        <div class="sidebar-content">
+            <!-- Navigation Items -->
+            <nav class="sidebar-nav">
+                <div class="nav-item">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All" @onclick="CloseMobileMenu">
+                        <span class="nav-icon">📁</span>
+                        <span class="nav-text">Upload</span>
+                    </NavLink>
+                </div>
+                <div class="nav-item">
+                    <NavLink class="nav-link" href="results" @onclick="CloseMobileMenu">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Results</span>
+                    </NavLink>
+                </div>
+                <div class="nav-item">
+                    <NavLink class="nav-link" href="history" @onclick="CloseMobileMenu">
+                        <span class="nav-icon">📜</span>
+                        <span class="nav-text">History</span>
+                    </NavLink>
+                </div>
+            </nav>
+
+            <!-- Profile Section -->
+            <div class="profile-section">
+                @if (isAuthenticated)
+                {
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <span class="avatar-icon">👨‍💻</span>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-name">@currentUser?.Username</div>
+                            <div class="profile-status">
+                                <span class="status-indicator"></span>
+                                <span class="status-text">Online</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="logout-btn" @onclick="HandleLogout">
+                        <span class="logout-icon">🚪</span>
+                        <span>Logout</span>
+                    </button>
+                }
+                else
+                {
+                    <div class="auth-links">
+                        <NavLink class="auth-link" href="login" @onclick="CloseMobileMenu">
+                            <span class="nav-icon">🔐</span>
+                            <span class="nav-text">Login</span>
+                        </NavLink>
+                        <NavLink class="auth-link" href="register" @onclick="CloseMobileMenu">
+                            <span class="nav-icon">✨</span>
+                            <span class="nav-text">Register</span>
+                        </NavLink>
+                    </div>
+                }
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="content-wrapper">
             @Body
-        </article>
+        </div>
     </main>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay @(isMobileMenuOpen ? "active" : "")" @onclick="CloseMobileMenu"></div>
 </div>
+
+@using ResumeAnalyzer.Client.Services
+@using ResumeAnalyzer.Shared.Models
+@inject IAuthService AuthService
+@inject NavigationManager Navigation
+@implements IDisposable
+
+@code {
+    private bool isMobileMenuOpen = false;
+    private bool isAuthenticated = false;
+    private UserSession? currentUser;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CheckAuthenticationStatus();
+        Navigation.LocationChanged += OnLocationChanged;
+    }
+
+    private async void OnLocationChanged(object? sender, Microsoft.AspNetCore.Components.Routing.LocationChangedEventArgs e)
+    {
+        await CheckAuthenticationStatus();
+    }
+
+    private async Task CheckAuthenticationStatus()
+    {
+        isAuthenticated = await AuthService.IsAuthenticatedAsync();
+        if (isAuthenticated)
+        {
+            currentUser = await AuthService.GetCurrentUserAsync();
+        }
+        else
+        {
+            currentUser = null;
+        }
+        StateHasChanged();
+    }
+
+    private void ToggleMobileMenu()
+    {
+        isMobileMenuOpen = !isMobileMenuOpen;
+    }
+
+    private void CloseMobileMenu()
+    {
+        isMobileMenuOpen = false;
+    }
+
+    private async Task HandleLogout()
+    {
+        await AuthService.LogoutAsync();
+        isAuthenticated = false;
+        currentUser = null;
+        CloseMobileMenu();
+        Navigation.NavigateTo("", forceLoad: true);
+    }
+
+    public void Dispose()
+    {
+        Navigation.LocationChanged -= OnLocationChanged;
+    }
+}
