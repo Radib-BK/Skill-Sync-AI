@@ -16,12 +16,15 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Update wwwroot/index.html
-        run: |
-          sed -i 's|<base href="/" />|<base href="/SkillSync-AI/" />|g' ResumeAnalyzer.Client/wwwroot/index.html
+      - name: Restore dependencies
+        run: dotnet restore ResumeAnalyzer.Client/ResumeAnalyzer.Client.csproj
 
       - name: Publish
         run: dotnet publish ResumeAnalyzer.Client/ResumeAnalyzer.Client.csproj -c Release -o release --nologo
+
+      - name: Update wwwroot/index.html for GitHub Pages
+        run: |
+          sed -i 's|<base href="/" />|<base href="/Skill-Sync-AI/" />|g' release/wwwroot/index.html
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
