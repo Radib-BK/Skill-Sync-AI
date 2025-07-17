@@ -35,6 +35,47 @@ html, body {
     }
 }
 
+/* Navigation emoji styling */
+.nav-emoji {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    width: 1.5rem;
+    text-align: center;
+}
+
+/* File info section styling */
+.file-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.info-text {
+    color: #c0c0c0;
+    font-weight: 500;
+}
+
 /* Top row navbar styling to match sidebar */
 .top-row {
     background: linear-gradient(90deg, rgba(5, 39, 103, 0.9) 0%, rgba(58, 6, 71, 0.9) 70%) !important;
@@ -227,6 +268,7 @@ html, body {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 3rem;
     margin-bottom: 3rem;
+    align-items: start;
 }
 
 /* Neon Cards */
@@ -240,6 +282,9 @@ html, body {
     border: 2px solid transparent;
     transition: all 0.3s ease;
     overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
 }
 
 .neon-card::before {
@@ -292,6 +337,9 @@ html, body {
 .card-content {
     position: relative;
     z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-icon {
@@ -313,6 +361,7 @@ html, body {
     margin-bottom: 2rem;
     font-size: 1rem;
     opacity: 0.9;
+    flex-grow: 1;
 }
 
 /* Enhanced File Input Styling */

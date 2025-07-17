@@ -50,6 +50,7 @@
                     <div class="card-icon">📄</div>
                     <h3 class="card-title">Resume</h3>
                     <p class="card-description">Upload your resume in PDF or DOCX format</p>
+                    
                     <div class="file-input-wrapper">
                         <InputFile OnChange="@OnResumeSelected" class="file-input" accept=".pdf,.docx" />
                         <div class="file-input-overlay">
@@ -63,6 +64,22 @@
                                     <span>Choose File or Drag & Drop</span>
                                 }
                             </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Add some additional content to balance the layout -->
+                    <div class="file-info">
+                        <div class="info-item">
+                            <span class="info-icon">📋</span>
+                            <span class="info-text">PDF & DOCX supported</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📏</span>
+                            <span class="info-text">Max file size: 10MB</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🔒</span>
+                            <span class="info-text">Your data is secure</span>
                         </div>
                     </div>
                 </div>

@@ -151,6 +151,9 @@
     font-size: 0.75rem;
     color: #4ade80;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
 }
 
 .btn-logout {
