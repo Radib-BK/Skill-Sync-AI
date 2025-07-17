@@ -48,14 +48,14 @@ body {
     margin-left: 1rem;
 }
 
-.brand-icon {
+/* .brand-icon {
     width: 36px;
     height: 36px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
     border: 2px solid rgba(100, 255, 218, 0.2);
     animation: iconGlow 3s ease-in-out infinite alternate;
-}
+} */
 
 @keyframes iconGlow {
     0% { box-shadow: 0 0 20px rgba(100, 255, 218, 0.3); }
@@ -67,7 +67,7 @@ body {
     color: #64ffda;
     font-weight: 900;
     font-size: 1.4rem;
-    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
     letter-spacing: 0.5px;
     position: relative;
     animation: textGlow 2s ease-in-out infinite alternate;
@@ -75,11 +75,11 @@ body {
 
 @keyframes textGlow {
     0% { 
-        text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+        text-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
         color: #64ffda;
     }
     100% { 
-        text-shadow: 0 0 20px rgba(100, 255, 218, 0.8), 0 0 30px rgba(100, 255, 218, 0.4);
+        text-shadow: 0 0 10px rgba(100, 255, 218, 0.8), 0 0 20px rgba(100, 255, 218, 0.4);
         color: #80ffeb;
     }
 }
@@ -104,7 +104,9 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-left: auto; /* <- THIS pushes it to the right */
 }
+
 
 .nav-link {
     color: rgba(100, 255, 218, 0.8);

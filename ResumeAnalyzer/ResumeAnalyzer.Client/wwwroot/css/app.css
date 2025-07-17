@@ -78,7 +78,7 @@ body {
     color: #64ffda;
     font-weight: 900;
     font-size: 1.4rem;
-    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
     letter-spacing: 0.5px;
     position: relative;
     animation: textGlow 2s ease-in-out infinite alternate;
@@ -86,11 +86,11 @@ body {
 
 @keyframes textGlow {
     0% { 
-        text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+        text-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
         color: #64ffda;
     }
     100% { 
-        text-shadow: 0 0 20px rgba(100, 255, 218, 0.8), 0 0 30px rgba(100, 255, 218, 0.4);
+        text-shadow: 0 0 10px rgba(100, 255, 218, 0.8), 0 0 20px rgba(100, 255, 218, 0.4);
         color: #80ffeb;
     }
 }
@@ -115,7 +115,9 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-left: auto; /* <- THIS pushes it to the right */
 }
+
 
 .nav-link {
     color: rgba(255, 255, 255, 0.9);
@@ -512,6 +514,22 @@ body {
     box-shadow: 0 6px 25px rgba(220, 38, 38, 0.5);
 }
 
+/* ===== SIDEBAR FOOTER ===== */
+.sidebar-footer {
+    margin-top: auto;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.copyright-text {
+    font-size: 0.75rem;
+    color: rgba(192, 192, 192, 0.6);
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
 /* ===== MAIN CONTENT ===== */
 .main-content {
     flex: 1;
@@ -744,8 +762,8 @@ body {
 
 /* File info section styling */
 .file-info {
-    margin-top: 1.5rem;
-    padding: 1rem;
+    margin-top: 1.8rem;
+    padding: 1.2rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     border: 1px solid rgba(0, 212, 255, 0.2);
@@ -1037,10 +1055,11 @@ body {
 
 .card-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     flex: 1;
     display: flex;
     flex-direction: column;
+    pointer-events: none;
 }
 
 .card-icon {
@@ -1067,9 +1086,14 @@ body {
 
 /* Enhanced File Input Styling */
 .file-input-wrapper {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: block;
     cursor: pointer;
+    z-index: 2;
 }
 
 .file-input-wrapper.disabled,
@@ -1096,12 +1120,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px dashed #00d4ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px dashed rgba(0, 212, 255, 0.3);
     border-radius: 15px;
     transition: all 0.3s ease;
-    position: relative;
     overflow: hidden;
     cursor: pointer;
 }
@@ -1123,13 +1150,13 @@ body {
 
 .file-input-overlay:hover {
     border-color: #00ffff;
-    background: rgba(0, 212, 255, 0.1);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    background: rgba(0, 212, 255, 0.05);
+    box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.2);
 }
 
 .file-input-overlay.disabled:hover {
-    border-color: #00d4ff;
-    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+    background: rgba(255, 255, 255, 0.02);
     box-shadow: none;
 }
 
@@ -1175,6 +1202,7 @@ body {
 /* Text input styling */
 .text-input-wrapper {
     position: relative;
+    pointer-events: auto;
 }
 
 .job-description-textarea {
@@ -1192,6 +1220,7 @@ body {
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    pointer-events: auto;
 }
 
 .job-description-textarea:focus {
@@ -1877,10 +1906,6 @@ body {
     
     .neon-card {
         padding: 1rem;
-    }
-    
-    .file-input-overlay {
-        height: 100px;
     }
     
     .ai-analyze-btn {
