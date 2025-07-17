@@ -36,10 +36,9 @@ body {
 .navbar-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 100%;
     width: 100%;
-    max-width: 1200px;
     padding: 0 2rem;
 }
 
