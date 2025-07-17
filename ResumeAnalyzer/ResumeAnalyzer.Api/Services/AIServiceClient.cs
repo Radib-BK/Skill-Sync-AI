@@ -14,13 +14,17 @@ public class AIServiceClient : IAIServiceClient
     private readonly HttpClient _httpClient;
     private readonly ILogger<AIServiceClient> _logger;
 
-    public AIServiceClient(HttpClient httpClient, ILogger<AIServiceClient> logger)
+    public AIServiceClient(HttpClient httpClient, ILogger<AIServiceClient> logger, IConfiguration configuration)
     {
         _httpClient = httpClient;
         _logger = logger;
         
-        // Configure base address for the AI service
-        _httpClient.BaseAddress = new Uri("https://radib-bk-skill-sync-ai.hf.space/");
+        // Configure base address for the AI service from configuration
+        var baseUrl = configuration.GetValue<string>("AIService:BaseUrl");
+        if (!string.IsNullOrEmpty(baseUrl))
+        {
+            _httpClient.BaseAddress = new Uri(baseUrl);
+        }
     }
 
     public async Task<AnalysisResponse> AnalyzeResumeAsync(AnalysisRequest request)

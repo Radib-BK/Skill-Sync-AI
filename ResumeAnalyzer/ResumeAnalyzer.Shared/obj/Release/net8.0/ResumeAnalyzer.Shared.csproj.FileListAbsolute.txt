@@ -1,0 +1,12 @@
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\bin\Release\net8.0\ResumeAnalyzer.Shared.deps.json
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\bin\Release\net8.0\ResumeAnalyzer.Shared.dll
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\bin\Release\net8.0\ResumeAnalyzer.Shared.pdb
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Release\net8.0\ResumeAnalyzer.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Release\net8.0\ResumeAnalyzer.Shared.AssemblyInfoInputs.cache
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Release\net8.0\ResumeAnalyzer.Shared.AssemblyInfo.cs
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Release\net8.0\ResumeAnalyzer.Shared.csproj.CoreCompileInputs.cache
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Release\net8.0\ResumeAnalyzer.Shared.sourcelink.json
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Release\net8.0\ResumeAnalyzer.Shared.dll
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Release\net8.0\refint\ResumeAnalyzer.Shared.dll
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Release\net8.0\ResumeAnalyzer.Shared.pdb
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Shared\obj\Release\net8.0\ref\ResumeAnalyzer.Shared.dll

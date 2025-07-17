@@ -1,0 +1,3 @@
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\publish\ResumeAnalyzer.Shared.dll
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\publish\ResumeAnalyzer.Shared.deps.json
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\publish\ResumeAnalyzer.Shared.pdb

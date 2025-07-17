@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ResumeAnalyzer
 
     steps:
       - uses: actions/checkout@v4
@@ -21,11 +24,14 @@ jobs:
         with:
           dotnet-version: '8.x'
 
+      - name: Restore dependencies
+        run: dotnet restore ResumeAnalyzer.Api
+
       - name: Build with dotnet
-        run: dotnet build ResumeAnalyzer/ResumeAnalyzer.Api --configuration Release
+        run: dotnet build ResumeAnalyzer.Api --configuration Release --no-restore
 
       - name: dotnet publish
-        run: dotnet publish ResumeAnalyzer/ResumeAnalyzer.Api -c Release -o ./publish
+        run: dotnet publish ResumeAnalyzer.Api -c Release -o ./publish --no-restore
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3

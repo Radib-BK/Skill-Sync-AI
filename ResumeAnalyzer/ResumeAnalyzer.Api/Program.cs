@@ -1,8 +1,17 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpOverrides;
 using ResumeAnalyzer.Api.Data;
 using ResumeAnalyzer.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure forwarded headers for Azure deployment
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -18,7 +27,8 @@ builder.Services.AddCors(options =>
                 "http://localhost:5000",  // Default Blazor client URL
                 "http://localhost:5283",  // API URL
                 "https://localhost:7064", // HTTPS API URL
-                "http://localhost:5071"   // Current Blazor client URL
+                "http://localhost:5071",  // Current Blazor client URL
+                "https://skillsync-resume-api-efhqb2g9gagpfxhh.southeastasia-01.azurewebsites.net" // Azure production URL
             )
             .AllowAnyMethod()
             .AllowAnyHeader());
@@ -50,6 +60,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseForwardedHeaders();
 app.UseHttpsRedirection();
 app.UseCors("AllowBlazorClient");
 app.UseAuthorization();
