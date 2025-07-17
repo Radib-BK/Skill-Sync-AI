@@ -49,6 +49,8 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    width: 100%;
+    max-width: 1200px;
     padding: 0 1rem;
 }
 
@@ -241,7 +243,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 2rem 0;
+    padding: 2rem 0rem 1rem 0rem;
     position: relative;
     z-index: 1;
 }
@@ -478,7 +480,7 @@ body {
 
 .logout-btn {
     width: 100%;
-    padding: 1rem;
+    padding: 0.8rem;
     background: linear-gradient(135deg, #dc2626, #991b1b);
     border: none;
     border-radius: 12px;
@@ -517,7 +519,7 @@ body {
 /* ===== SIDEBAR FOOTER ===== */
 .sidebar-footer {
     margin-top: auto;
-    padding: 1rem 1.5rem;
+    padding: 0.2rem 1.5rem;
     border-top: 1px solid rgba(100, 255, 218, 0.2);
 }
 
@@ -762,8 +764,8 @@ body {
 
 /* File info section styling */
 .file-info {
-    margin-top: 1.8rem;
-    padding: 1.2rem;
+    margin-top: 1.6rem;
+    padding: 1.0rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     border: 1px solid rgba(0, 212, 255, 0.2);
@@ -963,13 +965,18 @@ body {
 
 .title-icon {
     font-size: 2.5rem;
-    animation: rotate 4s linear infinite;
+    animation: floatUpDown 2s ease-in-out infinite;
 }
 
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px); /* adjust the amount of "float" */
+    }
 }
+
 
 .ai-subtitle {
     font-size: 1.2rem;
@@ -1059,7 +1066,6 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    pointer-events: none;
 }
 
 .card-icon {
@@ -1086,11 +1092,7 @@ body {
 
 /* Enhanced File Input Styling */
 .file-input-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: relative;
     display: block;
     cursor: pointer;
     z-index: 2;
@@ -1109,7 +1111,7 @@ body {
     height: 100%;
     opacity: 0;
     cursor: pointer;
-    z-index: 3;
+    z-index: 10;
 }
 
 .file-input:disabled {
@@ -1120,15 +1122,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    height: 120px;
     background: rgba(255, 255, 255, 0.02);
     border: 2px dashed rgba(0, 212, 255, 0.3);
     border-radius: 15px;
     transition: all 0.3s ease;
+    position: relative;
     overflow: hidden;
     cursor: pointer;
 }
