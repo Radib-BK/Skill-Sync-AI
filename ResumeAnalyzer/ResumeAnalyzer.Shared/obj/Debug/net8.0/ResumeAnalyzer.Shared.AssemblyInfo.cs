@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ResumeAnalyzer.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+607dd58be97196d2b0292b72a065b1d0342bd2d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab4db93668d499df9b736c2ef130b7d1244ed512")]
 [assembly: System.Reflection.AssemblyProductAttribute("ResumeAnalyzer.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ResumeAnalyzer.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
