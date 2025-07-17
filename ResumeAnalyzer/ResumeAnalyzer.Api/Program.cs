@@ -28,7 +28,8 @@ builder.Services.AddCors(options =>
                 "http://localhost:5283",  // API URL
                 "https://localhost:7064", // HTTPS API URL
                 "http://localhost:5071",  // Current Blazor client URL
-                "https://skillsync-resume-api-efhqb2g9gagpfxhh.southeastasia-01.azurewebsites.net" // Azure production URL
+                "https://skillsync-resume-api-efhqb2g9gagpfxhh.southeastasia-01.azurewebsites.net", // Azure production URL
+                "https://radib-bk.github.io" // GitHub Pages URL
             )
             .AllowAnyMethod()
             .AllowAnyHeader());
