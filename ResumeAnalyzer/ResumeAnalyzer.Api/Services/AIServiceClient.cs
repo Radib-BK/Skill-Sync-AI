@@ -20,7 +20,7 @@ public class AIServiceClient : IAIServiceClient
         _logger = logger;
         
         // Configure base address for the AI service
-        _httpClient.BaseAddress = new Uri("http://localhost:5002/");
+        _httpClient.BaseAddress = new Uri("https://radib-bk-skill-sync-ai.hf.space/");
     }
 
     public async Task<AnalysisResponse> AnalyzeResumeAsync(AnalysisRequest request)

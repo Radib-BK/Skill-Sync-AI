@@ -25,7 +25,7 @@ builder.Services.AddCors(options =>
 });
 
 // Configure database
-var connectionString = "Server=localhost;Database=ResumeAnalyzerDB;User=root;Password=fallguys;Allow User Variables=True;Convert Zero Datetime=True";
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));

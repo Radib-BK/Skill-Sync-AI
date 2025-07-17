@@ -247,3 +247,4 @@ D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Api\obj\Debug\n
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Api\obj\Debug\net8.0\ResumeAnalyzer.Api.pdb
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Api\obj\Debug\net8.0\ResumeAnalyzer.Api.genruntimeconfig.cache
 D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Api\obj\Debug\net8.0\ref\ResumeAnalyzer.Api.dll
+D:\Personal Projects\Skill-Sync-AI\ResumeAnalyzer\ResumeAnalyzer.Api\bin\Debug\net8.0\appsettings.Production.json

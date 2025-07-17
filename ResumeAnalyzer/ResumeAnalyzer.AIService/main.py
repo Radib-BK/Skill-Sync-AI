@@ -4,6 +4,7 @@ from typing import List, Dict
 import logging
 import numpy as np
 import re
+import os
 from collections import Counter
 import asyncio
 from functools import lru_cache
@@ -15,6 +16,8 @@ from fastapi.middleware.cors import CORSMiddleware
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Environment variables are set in Dockerfile
 
 app = FastAPI(title="Resume Analyzer AI Service")
 

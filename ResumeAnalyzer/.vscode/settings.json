@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/db988a9b-2217-4850-8e31-0faaca71406a/resourceGroups/skillsync-rg/providers/Microsoft.Web/sites/skillsync-resume-api",
+    "appService.deploySubpath": "ResumeAnalyzer.Api"
+}
