@@ -27,7 +27,8 @@ public class FileProcessingService : IFileProcessingService
         {
             ".pdf" => await ExtractTextFromPdfAsync(memoryStream),
             ".docx" => await ExtractTextFromDocxAsync(memoryStream),
-            _ => throw new ArgumentException("Unsupported file type. Only PDF and DOCX files are supported.")
+            ".txt" => await ExtractTextFromTxtAsync(memoryStream),
+            _ => throw new ArgumentException("Unsupported file type. Only PDF, DOCX, and TXT files are supported.")
         };
     }
 
@@ -66,6 +67,15 @@ public class FileProcessingService : IFileProcessingService
             }
 
             return text.ToString();
+        });
+    }
+
+    private async Task<string> ExtractTextFromTxtAsync(Stream fileStream)
+    {
+        return await Task.Run(async () =>
+        {
+            using var reader = new StreamReader(fileStream);
+            return await reader.ReadToEndAsync();
         });
     }
 } 

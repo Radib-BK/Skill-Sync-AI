@@ -51,9 +51,9 @@ public class ResumeAnalysisController : ControllerBase
             }
 
             // Validate file types
-            if (!IsValidFileType(resume.FileName) || !IsValidFileType(jobDescription.FileName))
+            if (!IsValidFileType(resume.FileName, isResume: true) || !IsValidFileType(jobDescription.FileName, isResume: false))
             {
-                return BadRequest("Invalid file type. Only PDF and DOCX files are supported.");
+                return BadRequest("Invalid file type. Resume must be PDF or DOCX. Job description can be PDF, DOCX, or TXT (for pasted text).");
             }
 
             // Extract text from files
@@ -146,9 +146,19 @@ public class ResumeAnalysisController : ControllerBase
         }
     }
 
-    private bool IsValidFileType(string fileName)
+    private bool IsValidFileType(string fileName, bool isResume)
     {
         var extension = Path.GetExtension(fileName).ToLower();
-        return extension == ".pdf" || extension == ".docx";
+        
+        if (isResume)
+        {
+            // Resume must be PDF or DOCX
+            return extension == ".pdf" || extension == ".docx";
+        }
+        else
+        {
+            // Job description can be PDF, DOCX, or TXT
+            return extension == ".pdf" || extension == ".docx" || extension == ".txt";
+        }
     }
 } 
