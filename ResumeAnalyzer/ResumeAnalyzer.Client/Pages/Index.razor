@@ -156,7 +156,7 @@
             var userId = currentUser?.UserId;
 
             var result = await AnalysisService.AnalyzeResumeAsync(resumeFile, jobDescriptionFile, userId);
-            NavigationManager.NavigateTo($"/results");
+                            NavigationManager.NavigateTo("results");
         }
         catch (Exception ex)
         {

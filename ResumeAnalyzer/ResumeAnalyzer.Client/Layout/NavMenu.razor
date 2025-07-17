@@ -126,6 +126,6 @@
         await AuthService.LogoutAsync();
         isAuthenticated = false;
         currentUser = null;
-        Navigation.NavigateTo("/login", forceLoad: true);
+        Navigation.NavigateTo("login", forceLoad: true);
     }
 }

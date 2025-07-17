@@ -90,7 +90,7 @@
             </EditForm>
 
             <div class="auth-footer">
-                <p>Already have an account? <a href="/login" class="auth-link">Login here</a></p>
+                <p>Already have an account? <a href="login" class="auth-link">Login here</a></p>
             </div>
         </div>
     </div>
@@ -116,7 +116,7 @@
             {
                 successMessage = "Account created successfully! Redirecting...";
                 await Task.Delay(2000); // Show success message for 2 seconds
-                Navigation.NavigateTo("/", forceLoad: true);
+                Navigation.NavigateTo("", forceLoad: true);
             }
             else
             {
