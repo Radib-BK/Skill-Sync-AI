@@ -22,7 +22,7 @@ html, body {
     }
     
     .page {
-        flex-direction: column;
+        flex-direction: column !important;
     }
     
     main {
@@ -32,6 +32,26 @@ html, body {
     
     .content {
         padding: 0 !important;
+    }
+}
+
+/* Desktop layout fix - ensure sidebar is visible */
+@media (min-width: 641px) {
+    .page {
+        flex-direction: row !important;
+    }
+    
+    .sidebar {
+        display: block !important;
+        width: 250px !important;
+        height: 100vh !important;
+        position: sticky !important;
+        top: 0 !important;
+    }
+    
+    main {
+        flex: 1 !important;
+        margin-left: 0 !important;
     }
 }
 

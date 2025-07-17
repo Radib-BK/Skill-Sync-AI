@@ -67,18 +67,33 @@
 
 @media (min-width: 641px) {
     .navbar-toggler {
-        display: none;
+        display: none !important;
     }
 
     .collapse {
         /* Never collapse the sidebar for wide screens */
-        display: block;
+        display: block !important;
     }
     
     .nav-scrollable {
         /* Allow sidebar to scroll for tall menus */
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
+        height: calc(100vh - 3.5rem) !important;
+        overflow-y: auto !important;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640.98px) {
+    .navbar-toggler {
+        display: block !important;
+    }
+    
+    .collapse {
+        display: none !important;
+    }
+    
+    .collapse.show {
+        display: block !important;
     }
 }
 
