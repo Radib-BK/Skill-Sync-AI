@@ -61,7 +61,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseForwardedHeaders();
-app.UseHttpsRedirection();
+
+// Don't use HTTPS redirection in Azure App Service (it's handled by the platform)
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseCors("AllowBlazorClient");
 app.UseAuthorization();
 
