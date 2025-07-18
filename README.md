@@ -12,8 +12,6 @@ A modern, AI-powered resume analysis system that helps match candidates with job
 
 ### 🌐 **[Try SkillSync AI Live →](https://radib-bk.github.io/Skill-Sync-AI/)**
 
-*Experience the power of AI-driven resume analysis in real-time*
-
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-4CAF50?style=for-the-badge&logo=github&logoColor=white)](https://radib-bk.github.io/Skill-Sync-AI/)
 [![Azure Deployment](https://img.shields.io/badge/Azure-Deployed-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://radib-bk.github.io/Skill-Sync-AI/)
 [![Huggingface AI](https://img.shields.io/badge/🤗%20HuggingFace-AI%20Models-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://radib-bk.github.io/Skill-Sync-AI/)
@@ -122,17 +120,16 @@ graph TD
 
 ### Prerequisites
 - .NET 8.0 SDK
-- Python 3.8+
+- Python 3.10
 - MySQL Server
-- 2GB+ RAM
-- CPU with AVX2 support (recommended)
 
 ### Installation
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/SkillSync-AI.git
+   git clone https://github.com/Radib-BK/Skill-Sync-AI.git
    cd SkillSync-AI
+   cd ResumeAnalyzer
    ```
 
 2. **Setup Database**
@@ -176,10 +173,6 @@ graph TD
 - Rate limiting
 - Error handling
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -195,6 +188,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-Made with ❤️ by Radib BK
 
 </div> 
