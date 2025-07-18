@@ -6,6 +6,20 @@ A modern, AI-powered resume analysis system that helps match candidates with job
 
 </div>
 
+## 🚀 Live Demo
+
+<div align="center">
+
+### 🌐 **[Try SkillSync AI Live →](https://radib-bk.github.io/Skill-Sync-AI/)**
+
+*Experience the power of AI-driven resume analysis in real-time*
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-4CAF50?style=for-the-badge&logo=github&logoColor=white)](https://radib-bk.github.io/Skill-Sync-AI/)
+[![Azure Deployment](https://img.shields.io/badge/Azure-Deployed-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://radib-bk.github.io/Skill-Sync-AI/)
+[![Huggingface AI](https://img.shields.io/badge/🤗%20HuggingFace-AI%20Models-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://radib-bk.github.io/Skill-Sync-AI/)
+
+</div>
+
 ## 📸 Screenshots
 
 <div align="center">
@@ -81,6 +95,28 @@ graph TD
     E -->|Skill Extraction| G[spaCy NER]
     E -->|Fallback| H[RapidFuzz]
 ```
+
+## ☁️ Deployment Architecture
+
+### 🔵 Microsoft Azure
+- **Frontend**: Blazor WebAssembly app deployed on **GitHub Pages** with Azure CDN
+- **Backend API**: ASP.NET Core API hosted on **Azure App Service**
+- **Database**: MySQL database on **Azure Database for MySQL**
+- **SSL/TLS**: Managed certificates for secure HTTPS connections
+- **Scaling**: Auto-scaling enabled based on demand
+
+### 🤗 Huggingface Spaces
+- **AI Service**: FastAPI-based AI service deployed on **Huggingface Spaces**
+- **Models**: 
+  - Sentence Transformers (`all-MiniLM-L6-v2`) for semantic similarity
+  - spaCy NER (`en_core_web_sm`) for named entity recognition
+- **GPU Support**: Optimized for CPU inference with potential GPU acceleration
+- **Caching**: Model caching for improved response times
+
+### 🔄 CI/CD Pipeline
+- **GitHub Actions**: Automated deployment pipeline
+- **Azure DevOps**: Continuous integration and deployment
+- **Environment Management**: Separate staging and production environments
 
 ## 🚀 Getting Started
 
